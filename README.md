@@ -61,7 +61,7 @@ The key objectives of this project are:
 
 ## 📂 Directory Structure
 
-\`\`\`plaintext
+\`\`\`
 
 .
 
