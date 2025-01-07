@@ -61,20 +61,29 @@ The key objectives of this project are:
 
 ## 📂 Directory Structure
 
-\`\`\`
-.
-├── artifacts/ # Stores intermediate files (preprocessor, datasets, models)
-├── notebook/ # Jupyter notebooks for EDA and experimentation
-├── src/ # Source code directory
-│ ├── components/ # Core project modules (ingestion, transformation, etc.)
-│ ├── logger.py # Logging utility
-│ ├── exception.py # Custom exception handling
-│ ├── utils.py # Helper functions
-├── README.md # Project documentation
-├── requirements.txt # Python dependencies
-├── .github/ # GitHub Actions configuration for CI/CD
-├── .gitignore # Files and directories to ignore in git
-└── data/ # Sample datasets
+- artifacts/
+  - Stores intermediate files (preprocessor, datasets, models)
+- notebook/
+  - Jupyter notebooks for EDA and experimentation
+- src/
+  - components/
+    - Core project modules (ingestion, transformation, etc.)
+  - logger.py
+    - Logging utility
+  - exception.py
+    - Custom exception handling
+  - utils.py
+    - Helper functions
+- README.md
+  - Project documentation
+- requirements.txt
+  - Python dependencies
+- .github/
+  - GitHub Actions configuration for CI/CD
+- .gitignore
+  - Files and directories to ignore in git
+- data/
+  - Sample datasets
 
 ## 💻 Technologies Used
 
