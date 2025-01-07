@@ -62,106 +62,89 @@ The key objectives of this project are:
 ## 📂 Directory Structure
 
 \`\`\`
-
 .
+├── artifacts/ # Stores intermediate files (preprocessor, datasets, models)
+├── notebook/ # Jupyter notebooks for EDA and experimentation
+├── src/ # Source code directory
+│ ├── components/ # Core project modules (ingestion, transformation, etc.)
+│ ├── logger.py # Logging utility
+│ ├── exception.py # Custom exception handling
+│ ├── utils.py # Helper functions
+├── README.md # Project documentation
+├── requirements.txt # Python dependencies
+├── .github/ # GitHub Actions configuration for CI/CD
+├── .gitignore # Files and directories to ignore in git
+└── data/ # Sample datasets
 
-├── artifacts/ \# Stores intermediate files (preprocessor, datasets,
-models)
+## 💻 Technologies Used
 
-├── notebook/ \# Jupyter notebooks for EDA and experimentation
+**Programming Language: Python**
 
-├── src/ \# Source code directory
+_Frameworks and Libraries_:
 
-│ ├── components/ \# Core project modules (ingestion, transformation,
-etc.)
+- Data manipulation: Pandas, NumPy
+- Machine Learning: scikit-learn
+- Logging and utilities: dill
 
-│ ├── logger.py \# Logging utility
+_CI/CD Tools_:
 
-│ ├── exception.py \# Custom exception handling
+- GitHub Actions
+- Docker (optional for containerized workflows)
 
-│ ├── utils.py \# Helper functions
+### ⚙️ Setup Instructions
 
-├── README.md \# Project documentation
+- Clone the Repository
 
-├── requirements.txt \# Python dependencies
+- git clone https://github.com/your_username/your_repository_name.git
 
-├── .github/ \# GitHub Actions configuration for CI/CD
+- cd your_repository_name
 
-├── .gitignore \# Files and directories to ignore in git
+- Create a Virtual Environment and Install Dependencies
 
-└── data/ \# Sample datasets
+- _For Linux/MacOS_:
 
-💻 Technologies Used
+- python -m venv venv
 
-Programming Language: Python
+- source venv/bin/activate
 
-Frameworks and Libraries:
+- pip install -r requirements.txt
 
-Data manipulation: Pandas, NumPy
+- _For Windows_:
 
-Machine Learning: scikit-learn
+- python -m venv venv
 
-Logging and utilities: dill
+- venv\\Scripts\\activate
 
-CI/CD Tools:
+- pip install -r requirements.txt
 
-GitHub Actions
+## 🚀 Running the Project
 
-Docker (optional for containerized workflows)
+- Run EDA
 
-⚙️ Setup Instructions
+- Open notebook/eda.ipynb to explore the dataset.
 
-Clone the Repository
+- Run Data Ingestion
 
-git clone https://github.com/your_username/your_repository_name.git
+- - python src/components/data_ingestion.py
 
-cd your_repository_name
+- Run Data Transformation
 
-Create a Virtual Environment and Install Dependencies
+- - python src/components/data_transformation.py
 
-For Linux/MacOS:
+## Full Workflow Execution
 
-python -m venv venv
+- Combine all components and run the pipeline.
 
-source venv/bin/activate
+- Integrate CI/CD
 
-pip install -r requirements.txt
+- Push changes to GitHub to trigger the CI/CD pipeline via GitHub Actions.
 
-For Windows:
+## 📜 License
 
-python -m venv venv
-
-venv\\Scripts\\activate
-
-pip install -r requirements.txt
-
-🚀 Running the Project
-
-Run EDA
-
-Open notebook/eda.ipynb to explore the dataset.
-
-Run Data Ingestion
-
-python src/components/data_ingestion.py
-
-Run Data Transformation
-
-python src/components/data_transformation.py
-
-Full Workflow Execution
-
-Combine all components and run the pipeline.
-
-Integrate CI/CD
-
-Push changes to GitHub to trigger the CI/CD pipeline via GitHub Actions.
-
-📜 License
-
-This project is licensed under the MIT License. See the LICENSE file for
-details.
+- This project is licensed under the MIT License. See the LICENSE file for
+  details.
 
 ```
+
 
 ```
