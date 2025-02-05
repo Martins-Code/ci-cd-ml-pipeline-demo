@@ -58,8 +58,44 @@ class ModelTrainer:
                 "XGBoost": XGBRFRegressor(),
             }
 
+            params = {
+                "Decision Tree": {
+                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'splitter': ['best', 'random'],  # Controls how splits are chosen
+                    'max_features': ['sqrt', 'log2'],  # Limits features per split
+                },
+                "Random Forest": {
+                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'max_features': ['sqrt', 'log2', None],  # Feature selection strategies
+                    'n_estimators': [50, 100, 200, 300],  # Number of trees in the forest
+                },
+                "Gradient Boosting": {
+                    'loss': ['squared_error', 'huber', 'absolute_error', 'quantile'],  # Loss function selection
+                    'learning_rate': [0.1, 0.05, 0.01, 0.001],  # Step size
+                    'subsample': [0.6, 0.75, 0.85, 0.95],  # Fraction of samples per boosting round
+                    'criterion': ['squared_error', 'friedman_mse'],
+                    'max_features': ['auto', 'sqrt', 'log2'],  # Feature selection strategies
+                    'n_estimators': [50, 100, 200, 300],  # Number of boosting stages
+                },
+                "Linear Regression": {},  # No hyperparameters to tune
+                "XGBRegressor": {
+                    'learning_rate': [0.1, 0.05, 0.01, 0.001],  # Learning rate for boosting
+                    'n_estimators': [50, 100, 200, 300],  # Number of trees
+                    'max_depth': [3, 5, 7],  # Tree depth for controlling complexity
+                },
+                "AdaBoost Regressor": {
+                    'learning_rate': [0.1, 0.05, 0.01, 0.001],  # Step size shrinkage
+                    'loss': ['linear', 'square', 'exponential'],  # Error weighting strategy
+                    'n_estimators': [50, 100, 200, 300],  # Number of weak learners
+                }
+            }
+
+            
+
+
+
             logging.info("Evaluating models using training and test data...")
-            model_report = evaluate_model(X_train, y_train, X_test, y_test, models)
+            model_report = evaluate_model(X_train, y_train, X_test, y_test, models, params)
             logging.info(f"Model evaluation completed. Report: {model_report}")
 
             # Find and log the best-performing model
