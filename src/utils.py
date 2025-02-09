@@ -19,6 +19,23 @@ def save_object(file_path, obj):
             dill.dump(obj, file)
     except Exception as e:
         raise CustomException(e)
+    
+
+def load_object(file_path):
+    """
+    Loads a serialized Python object (e.g., model, preprocessor) from a file.
+
+    Parameters:
+    - file_path (str): Path to the serialized object file.
+
+    Returns:
+    - object: The loaded Python object.
+    """
+    try:
+        with open(file_path, "rb") as file:
+            return dill.load(file)
+    except Exception as e:
+        raise CustomException(e, sys)
 
 
 def evaluate_model(X_train, y_train, X_test, y_test, models, params):
